@@ -3,7 +3,7 @@ class CTEProxy
   include ActiveRecord::Sanitization::ClassMethods
   include ActiveRecord::Reflection::ClassMethods
 
-  attr_accessor :reflections, :current_scope
+  attr_accessor :current_scope
   attr_reader :connection, :arel_table
 
   def initialize(name, model)
