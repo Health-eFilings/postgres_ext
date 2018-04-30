@@ -76,9 +76,8 @@ module ActiveRecord
       end
 
       def column_from_association(rel)
-        if assoc = assoc_from_related_table(rel)
-          column = assoc.klass.columns.find { |col| find_column(col, rel) }
-        end
+        assoc = assoc_from_related_table(rel)
+        assoc.klass.columns.find { |col| find_column(col, rel) } if assoc
       end
 
       def equality_for_hstore(rel)
